@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="tk.andivinu.mvvmkotlin.ui.search.ResultViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/airline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/origin"
+                android:layout_alignTop="@+id/price"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Text"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                app:mutableText="@{viewModel.getAirline()}" />
+
+            <TextView
+                android:id="@+id/supplierName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Text"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                app:mutableText="@{viewModel.getSupplierName()}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/ticketClass"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/origin"
+                android:layout_alignTop="@+id/price"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Text"
+                app:mutableText="@{viewModel.getTicketClass()}" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/supplierName"
+                android:layout_gravity="center_horizontal"
+                android:text="Text"
+                android:textStyle="bold"
+                app:mutableInt="@{viewModel.getDuration()}" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:mutableDouble="@{viewModel.getPrice()}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/origin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Text"
+                app:mutableText="@{viewModel.getOrigin()}" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_right" />
+
+            <TextView
+                android:id="@+id/destination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Text"
+                app:mutableText="@{viewModel.getDestination()}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MVVM Kotlin</string>
+
+    <string name="retry">Retry</string>
+    <string name="origin">origin</string>
+    <string name="destination">destination</string>
+    <string name="return_date">Return</string>
+    <string name="departure">Departure</string>
+    <string name="search">Search</string>
+
+    <string name="euro">\u20ac</string>
+    <string name="post_error">An error occurred while loading the posts</string>
+</resources>
